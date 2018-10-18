@@ -1,2 +1,2 @@
-# docker-woncercms
+# docker-wondercms
 Docker image for WonderCMS
