@@ -6,7 +6,7 @@ RUN apt-get update && \
 RUN git clone https://github.com/robiso/wondercms.git .
 RUN mv $PHP_INI_DIR/php.ini-development $PHP_INI_DIR/php.ini
 RUN docker-php-ext-install -j$(nproc) zip
-RUN apt-get -y --purge remove libicu-dev libgd-dev
+RUN apt-get -y --purge remove zlib1g-dev
 RUN a2enmod rewrite
 RUN chown -R www-data.www-data .
 EXPOSE 80
