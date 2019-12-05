@@ -2,6 +2,7 @@ FROM php:7.3.12-apache-buster
 ARG WONDERCMS_VERSION=2.7.0
 WORKDIR /var/www/html
 RUN apt-get update && \
+    apt-get -yu dist-upgrade && \
     apt-get -y install git zip libzip-dev && \
     apt-get -y autoremove && \
     apt-get clean && \
