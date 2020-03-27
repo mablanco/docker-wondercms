@@ -9,7 +9,6 @@ RUN apt-get update && \
     rm -rf /var/lib/{apt,dpkg,cache,log}
 RUN git clone --depth 1 https://github.com/robiso/wondercms.git -b $WONDERCMS_VERSION .
 RUN mv $PHP_INI_DIR/php.ini-development $PHP_INI_DIR/php.ini
-RUN echo OK
 RUN docker-php-ext-configure zip && \
     docker-php-ext-install -j$(nproc) zip
 RUN a2enmod rewrite
