@@ -1,4 +1,4 @@
-FROM php:7.3.12-apache-buster
+FROM php:7.4.4-apache-buster
 ARG WONDERCMS_VERSION=2.7.0
 WORKDIR /var/www/html
 RUN apt-get update && \
@@ -10,7 +10,7 @@ RUN apt-get update && \
 RUN git clone --depth 1 https://github.com/robiso/wondercms.git -b $WONDERCMS_VERSION .
 RUN mv $PHP_INI_DIR/php.ini-development $PHP_INI_DIR/php.ini
 RUN echo OK
-RUN docker-php-ext-configure zip --with-libzip && \
+RUN docker-php-ext-configure zip && \
     docker-php-ext-install -j$(nproc) zip
 RUN a2enmod rewrite
 RUN chown -R www-data.www-data .
