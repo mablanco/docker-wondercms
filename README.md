@@ -1,5 +1,5 @@
 # docker-wondercms
-Docker image for WonderCMS, a flat file CMS (https://www.wondercms.com/).
+Docker image for WonderCMS, a flat file CMS (<https://www.wondercms.com/>).
 
 This image sets up a development environment and relies on Debian Linux, Apache 2 and PHP7.
 
