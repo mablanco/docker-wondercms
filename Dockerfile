@@ -1,5 +1,5 @@
 FROM php:7.4.4-apache-buster
-ARG WONDERCMS_VERSION=2.7.0
+ARG WONDERCMS_VERSION=3.0.7
 WORKDIR /var/www/html
 RUN apt-get update && \
     apt-get -yu dist-upgrade && \
