@@ -1,6 +1,6 @@
 FROM php:7.4.9-apache-buster
 ENV DEBIAN_FRONTEND noninteractive
-ARG WONDERCMS_VERSION=3.0.7
+ARG WONDERCMS_VERSION=3.1.4
 WORKDIR /var/www/html
 RUN apt-get update && \
     apt-get -yqu dist-upgrade && \
