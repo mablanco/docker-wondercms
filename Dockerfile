@@ -1,4 +1,4 @@
-FROM php:7.4.4-apache-buster
+FROM php:7.4.9-apache-buster
 ENV DEBIAN_FRONTEND noninteractive
 ARG WONDERCMS_VERSION=3.0.7
 WORKDIR /var/www/html
