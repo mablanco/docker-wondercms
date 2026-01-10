@@ -1,6 +1,6 @@
-FROM php:8.3.13-apache
+FROM php:8.4.16-apache
 ARG DEBIAN_FRONTEND=noninteractive
-ARG WONDERCMS_VERSION=3.4.3
+ARG WONDERCMS_VERSION=3.6.0
 WORKDIR /var/www/html
 RUN apt-get update && \
     apt-get -yqu dist-upgrade && \
