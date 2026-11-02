@@ -25,7 +25,13 @@ RUN set -eux; \
     curl -fsSL -o wondercms.tar.gz \
         "https://github.com/WonderCMS/wondercms/archive/refs/tags/${WONDERCMS_VERSION}.tar.gz"; \
     echo "${WONDERCMS_SHA256}  wondercms.tar.gz" | sha256sum -c -; \
-    tar xzf wondercms.tar.gz --strip-components=1; \
+    # Extract only what the official release ZIP ships (plus the license),
+    # leaving out the tests and the project's development files
+    tar xzf wondercms.tar.gz --strip-components=1 \
+        "wondercms-${WONDERCMS_VERSION}/index.php" \
+        "wondercms-${WONDERCMS_VERSION}/.htaccess" \
+        "wondercms-${WONDERCMS_VERSION}/themes" \
+        "wondercms-${WONDERCMS_VERSION}/license"; \
     rm wondercms.tar.gz; \
     mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"; \
     a2enmod rewrite; \
